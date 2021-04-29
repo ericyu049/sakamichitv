@@ -1,0 +1,50 @@
+<nz-layout>
+    <nz-header style="color: white; padding: 0 25px; font-size: large; position: fixed; z-index: 1; width: 100%;">
+        <top-nav></top-nav>
+    </nz-header>
+    <nz-layout>
+        <nz-sider class="sider" nzCollapsible [nzCollapsedWidth]="0" [nzCollapsed]="true" [nzTrigger]="null"
+            nzWidth="250px">
+            <side-nav></side-nav>
+        </nz-sider>
+        <nz-content class="content" *ngIf="doneLoading">
+            <div class="viewer-container">
+                <iframe class="viewer" [src]="url"> </iframe>
+                <div style="padding-top: 15px">
+                    <h3>{{video.snippet.title}}</h3>
+                    <div class="stats-container">
+                        <span style="color: #bdbdbd; padding-top: 5px;">{{video.stats.viewCount}} views • {{video.snippet.publishedAt}}</span>
+                        <div class="icons-section">
+                            <span>
+                                <i nz-icon nzType="like" nzTheme="fill"></i>{{video.stats.likeCount}}
+                            </span>
+                            <span>
+                                <i nz-icon nzType="dislike" nzTheme="fill"></i>{{video.stats.likeCount}}
+                            </span>
+                            <span>
+                                <i nz-icon nzType="heart" nzTheme="fill"></i>{{video.stats.favoriteCount}}
+                            </span>
+                        </div>
+                    </div>
+                    <nz-divider></nz-divider>
+                    <div class="channel-container">
+                        <div>
+                            <img [src]="channelAvatar"/>
+                        </div>
+                        <div class="channel-details">
+                            <span style="font-size: 11pt;">{{video.snippet.channelTitle}}</span>
+                            <span style="font-size: 10pt; color: #bdbdbd">{{subscriberCount}} subscribers</span>
+                            <div class="video-descriptions">
+                                {{video.snippet.description}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="related-container">
+
+            </div>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

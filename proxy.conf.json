@@ -1,0 +1,14 @@
+{
+    "/search": {
+        "target": "https://www.googleapis.com/youtube/v3",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    "/videos": {
+        "target": "https://www.googleapis.com/youtube/v3",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

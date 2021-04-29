@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="left">
+        <i style="cursor: pointer;" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+        <div style="cursor: pointer;">
+            <img src="/assets/sakamichitv.png" class="image">
+        </div>
+
+    </div>
+    <div class="mid">
+        <nz-input-group style="width: 60%" [nzSuffix]="suffixIconSearch">
+            <input type="text" nz-input placeholder="Search" />
+          </nz-input-group>
+          <ng-template #suffixIconSearch>
+            <i nz-icon nzType="search"></i>
+          </ng-template>
+    </div>
+</div>

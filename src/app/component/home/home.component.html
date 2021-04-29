@@ -1,0 +1,52 @@
+<nz-layout>
+    <nz-header style="color: white; padding: 0 25px; font-size: large; position: fixed; z-index: 1; width: 100%;">
+        <top-nav></top-nav>
+    </nz-header>
+    <nz-layout>
+        <nz-sider class="sider" nzCollapsible [nzCollapsedWidth]="0" [(nzCollapsed)]="!isOpen" [nzTrigger]="null"
+            nzWidth="250px">
+            <side-nav></side-nav>
+        </nz-sider>
+        <nz-content class="content">
+            <div style="max-width: 1800px;">
+                <ng-container [ngTemplateOutlet]="gridlist" [ngTemplateOutletContext]="{videos: videos}">
+                </ng-container>
+            </div>
+        </nz-content>
+    </nz-layout>
+</nz-layout>
+<ng-template #gridlist let-videos="videos">
+    <div class="gutter-example">
+        <div nz-row [nzGutter]="[16,16]">
+            <nz-card nzHoverable nz-col class="card" nzSpan="6" *ngFor="let video of videos;"
+                [nzCover]="coverTemplate" (click)="goToVideo(video)">
+                <nz-card-meta [nzTitle]="title" [nzDescription]="description"></nz-card-meta>
+
+                <ng-template #title>
+                    <span class="card-title">{{video.snippet.title}}</span>
+                </ng-template>
+                <ng-template #description>
+                    <div class="description">
+                        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                            <div>
+                                <i nz-icon nzType="play-square" nzTheme="fill"></i>
+                                {{video.stats.viewCount}}
+                            </div>
+                            <div>
+                                <i nz-icon nzType="clock-circle" nzTheme="fill"></i>
+                                {{video.snippet.publishTime}}
+                            </div>
+                        </div>
+                        <div class="channel-title"> <i nz-icon nzType="user"></i> {{video.snippet.channelTitle}}</div>
+                    </div>
+
+                </ng-template>
+                <ng-template #coverTemplate>
+                    <div class="image">
+                        <img [src]="video.snippet.thumbnails.high.url" style="width: 100%" />
+                    </div>
+                </ng-template>
+            </nz-card>
+        </div>
+    </div>
+</ng-template>

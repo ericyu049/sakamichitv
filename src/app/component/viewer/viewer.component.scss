@@ -1,0 +1,57 @@
+.content {
+    margin-top: 64px;
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    .viewer-container {
+        width: calc(100% - 450px);
+        .viewer {
+            width: 100%;
+            min-height: calc((100vw - 480px) * 9 / 16);
+            border: none;
+        }
+        .stats-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+            .icons-section {
+                font-size: 14pt;
+                span {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    i {
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+        .channel-container {
+            display: flex;
+            flex-direction: row;
+            img {
+                height: 50px;
+                border-radius: 100%;
+            }
+            .channel-details {
+                display: flex;
+                flex-direction: column;
+                padding-left: 15px;
+                padding-top: 5px;
+                .video-descriptions {
+                    padding-top: 25px;
+                    white-space: pre;
+                }
+            }
+        }
+    }
+    .related-container {
+        width: 450px;
+    }
+}
+.sider {
+    top: 64px;
+    position: fixed;
+    height: calc(100vh - 64px);
+}
