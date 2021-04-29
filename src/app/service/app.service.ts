@@ -10,12 +10,12 @@ export class AppService {
         console.log('hiiii');
         const url = "/search";
         // return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
-        return this.http.get('/assets/nogi-main.json',  { params: query, reportProgress: true, responseType: "json" });
+        return this.http.get('/sakamichitv/assets/nogi-main.json',  { params: query, reportProgress: true, responseType: "json" });
     }
     getVideoStats(query) {
         const url = "/videos";
         // return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
-        return this.http.get('/assets/stats.json',  { params: query, reportProgress: true, responseType: "json" });
+        return this.http.get('/sakamichitv/assets/stats.json',  { params: query, reportProgress: true, responseType: "json" });
 
     }
     getChannelDetail(id) {
@@ -25,6 +25,6 @@ export class AppService {
             part: 'statistics, snippet',
             id: id
         }
-        return this.http.get('/assets/channel.json',  { params: query, reportProgress: true, responseType: "json" });
+        return this.http.get('/sakamichitv/assets/channel.json',  { params: query, reportProgress: true, responseType: "json" });
     }
 }
