@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
             this.store.dispatch(ActionTypes.searchVideos({searchRequest: {
                 part: 'snippet',
                 maxResults: 32,
-                q: '乃木坂46　櫻坂46　欅坂46　日向坂46　けやき坂46',
+                q: '乃木坂46',
                 type: 'video',
                 key: ''
             }}));
@@ -32,11 +32,11 @@ export class HomeComponent implements OnInit {
         }
         this.store.pipe(select(selectVideoResults)).subscribe(data => {
             if (data) {
-                console.log('hi');
                 this.videos = Array.from(data)
+                
                 this.doneLoading = true;
             }
-        })
+        });
     }
     goToVideo(video) {
         sessionStorage.setItem('video', JSON.stringify(video));

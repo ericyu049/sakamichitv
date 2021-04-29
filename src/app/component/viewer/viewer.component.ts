@@ -27,6 +27,7 @@ export class ViewerComponent implements OnInit {
         this.store.pipe(select(selectChannelDetail)).subscribe(
             data => {
                 if (data) {
+                    console.log(data);
                     this.channelAvatar = data.items[0].snippet.thumbnails.high.url;
                     this.subscriberCount = data.items[0].statistics.subscriberCount;
                     this.doneLoading = true;
