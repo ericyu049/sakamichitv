@@ -35,6 +35,6 @@ export class HomeComponent implements OnInit {
     }
     goToVideo(video) {
         sessionStorage.setItem('video', JSON.stringify(video));
-        window.location.href="/viewer.html"
+        window.location.href="/sakamichitv/viewer.html";
     }
 }
