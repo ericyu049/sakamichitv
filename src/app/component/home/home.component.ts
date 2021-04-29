@@ -18,13 +18,18 @@ export class HomeComponent implements OnInit {
     doneLoading = false;
     constructor(private http: HttpClient, private store: Store<AppState>) { }
     ngOnInit(): void {
-        this.store.dispatch(ActionTypes.searchVideos({searchRequest: {
-            part: 'snippet',
-            maxResults: 32,
-            q: '乃木坂46　櫻坂46　欅坂46　日向坂46　けやき坂46',
-            type: 'video',
-            key: 'AIzaSyAzdHWiPLODTady7NNa4zben6MOXoRpwd4'
-        }}));
+        if (sessionStorage.getItem('videos') === null) {
+            this.store.dispatch(ActionTypes.searchVideos({searchRequest: {
+                part: 'snippet',
+                maxResults: 32,
+                q: '乃木坂46　櫻坂46　欅坂46　日向坂46　けやき坂46',
+                type: 'video',
+                key: 'AIzaSyAzdHWiPLODTady7NNa4zben6MOXoRpwd4'
+            }}));
+        }
+        else {
+            this.videos = JSON.parse(sessionStorage.getItem('videos'));
+        }
         this.store.pipe(select(selectVideoResults)).subscribe(data => {
             if (data) {
                 console.log('hi');

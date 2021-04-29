@@ -40,6 +40,7 @@ export class AppEffects {
                             action.items[index].details = data.items[index].contentDetails
                             action.items[index].stats = data.items[index].statistics
                         }
+                        sessionStorage.setItem('videos', JSON.stringify(action.items));
                         return ActionTypes.searchVideosSuccess({ searchResult: action.items });
                     }),
                     catchError((error: Error) => {
