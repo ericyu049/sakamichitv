@@ -9,23 +9,23 @@ export class AppService {
     }
     searchVideos(query) {
         const url = this.HOSTNAME_URL +  "/search";
-        return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
-        // return this.http.get('/sakamichitv/assets/nogi-main.json',  { params: query, reportProgress: true, responseType: "json" });
+        // return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
+        return this.http.get('/sakamichitv/assets/nogi-main.json',  { params: query, reportProgress: true, responseType: "json" });
     }
     getVideoStats(query) {
         const url = this.HOSTNAME_URL + "/videos";
-        return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
-        // return this.http.get('/sakamichitv/assets/stats.json',  { params: query, reportProgress: true, responseType: "json" });
+        // return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
+        return this.http.get('/sakamichitv/assets/stats.json',  { params: query, reportProgress: true, responseType: "json" });
 
     }
     getChannelDetail(id) {
         const url = this.HOSTNAME_URL + "/channels";
         const query = {
-            key: 'AIzaSyAzdHWiPLODTady7NNa4zben6MOXoRpwd4',
+            key: '',
             part: 'statistics, snippet',
             id: id
         }
-        return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
-        // return this.http.get('/sakamichitv/assets/channel.json',  { params: query, reportProgress: true, responseType: "json" });
+        // return this.http.get(url, { params: query, reportProgress: true, responseType: "json" });
+        return this.http.get('/sakamichitv/assets/channel.json',  { params: query, reportProgress: true, responseType: "json" });
     }
 }

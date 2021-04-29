@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
                 maxResults: 32,
                 q: '乃木坂46　櫻坂46　欅坂46　日向坂46　けやき坂46',
                 type: 'video',
-                key: 'AIzaSyAzdHWiPLODTady7NNa4zben6MOXoRpwd4'
+                key: ''
             }}));
         }
         else {

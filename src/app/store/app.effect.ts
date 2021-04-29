@@ -22,7 +22,7 @@ export class AppEffects {
                                 part: 'statistics, contentDetails',
                                 maxResults: 32,
                                 id: ids.join(','),
-                                key: 'AIzaSyAzdHWiPLODTady7NNa4zben6MOXoRpwd4'
+                                key: ''
                             }
                             const firstresult = {
                                 items: data.items,
