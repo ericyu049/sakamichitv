@@ -11,7 +11,7 @@ import { AppState } from "src/app/store/app.state";
 export class SideNavComponent implements OnInit {
     @Input() enableMiniMode: boolean;
     showSideNav: boolean = true;
-    constructor(private store: Store<AppState> ) {
+    constructor(private store: Store<AppState>) {
     }
     @HostListener('window:resize', ['$event'])
     onResize(event?) {
@@ -26,11 +26,12 @@ export class SideNavComponent implements OnInit {
         )
     }
     checkScreenWidth() {
-        if (window.innerWidth <= 1300 && !window.location.pathname.includes("viewer.html")) {
+        if (window.innerWidth <= 1300) {
             this.showSideNav = false;
         }
         else {
-            this.showSideNav = true;
+            if (!window.location.pathname.includes("viewer.html"))
+                this.showSideNav = true;
         };
     }
     goHome() {
