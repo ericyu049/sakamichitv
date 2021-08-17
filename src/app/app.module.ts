@@ -67,4 +67,4 @@ const icons: IconDefinition[] = [
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class SakamichiTVModule { }
