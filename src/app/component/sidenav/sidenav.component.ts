@@ -25,4 +25,12 @@ export class SideNavComponent implements OnInit {
             this.showSideNav = true;
         };
     }
+    goHome() {
+        if (window.location.hostname === 'localhost') {
+            window.location.href = '/';
+        }
+        else if (window.location.hostname === 'https://ericyu049.github.io') {
+            window.location.href = 'https://ericyu049.github.io/sakamichitv/';
+        }
+    }
 }

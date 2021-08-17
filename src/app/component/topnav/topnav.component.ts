@@ -11,4 +11,12 @@ export class TopNavComponent implements OnInit{
     }
     ngOnInit(): void {
     }
+    goHome() {
+        if (window.location.hostname === 'localhost') {
+            window.location.href = '/';
+        }
+        else if (window.location.hostname === 'https://ericyu049.github.io') {
+            window.location.href = 'https://ericyu049.github.io/sakamichitv/';
+        }
+    }
 }

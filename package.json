@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "build-elements": "ng build && ng build sakamichi-elements --prod --output-hashing=none",
     "concat": "jscat ./dist/sakamichi-elements/runtime.js ./dist/sakamichi-elements/polyfills.js ./dist/sakamichi-elements/main.js > custom-element.js",
-    "copy-assets": "node copy-assets.js"
+    "copy-assets": "node copy-assets.js",
+    "all": "npm run build-elements && npm run concat && npm run copy-assets"
   },
   "private": true,
   "dependencies": {

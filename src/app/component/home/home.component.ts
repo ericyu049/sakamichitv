@@ -38,10 +38,10 @@ export class HomeComponent implements OnInit{
         if (window.innerWidth >= 2304) {
             this.nzflex = '16.66%';
         }
-        else if (window.innerWidth >= 1968 && window.innerWidth < 2300) {
+        else if (window.innerWidth >= 1624 && window.innerWidth < 2300) {
             this.nzflex = '20%';
         }
-        else if (window.innerWidth >= 1144 && window.innerWidth < 1968) {
+        else if (window.innerWidth >= 1144 && window.innerWidth < 1624) {
             this.nzflex = '25%';
         }
         else if (window.innerWidth >= 888 && window.innerWidth < 1144) {
@@ -53,8 +53,6 @@ export class HomeComponent implements OnInit{
         this.miniMode = window.innerWidth <= 1300;
     }
     goToVideo(event) {
-        const encoded = btoa(event);
-        const decoded:any = atob(encoded);
-        console.log(decoded.title);
+        window.location.href = 'https://ericyu049.github.io/sakamichitv/viewer.html?id=' + event.id;
     }
 }

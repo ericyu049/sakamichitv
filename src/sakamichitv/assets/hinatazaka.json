@@ -1,7 +1,8 @@
 {
     "rspCde": 0,
     "videos": [
-        {
+        {  
+            "id": "100001",
             "title": "日向坂46 『ソンナコトナイヨ』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ソンナコトナイヨ.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ソンナコトナイヨ.jpg",
@@ -15,6 +16,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100002",
             "title": "日向坂46 『青春の馬』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/青春の馬.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/青春の馬.jpg",
@@ -29,6 +31,7 @@
 
         },
         {
+            "id": "100003",
             "title": "日向坂46 『ときめき草』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ときめき草.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ときめき草.jpg",
@@ -42,6 +45,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100004",
             "title": "日向坂46 『ママのドレス』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ママのドレス.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ママのドレス.jpg",
@@ -56,19 +60,7 @@
 
         },
         {
-            "title": "日向坂46 『ドレミソラシド』",
-            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ドレミソラシド.m4v",
-            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ドレミソラシド.jpg",
-            "like": 3500,
-            "dislike": 62,
-            "upload_date": "2019/09/09",
-            "views": 387613,
-            "category": "日向坂46",
-            "uploader": "日向坂46 OFFICIAL CHANNEL",
-            "duration": "5:14",
-            "avatar": "/sakamichitv/assets/hinatazaka.png"
-        },
-        {
+            "id": "100005",
             "title": "日向坂46 『ナゼー』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ナゼー.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ナゼー.jpg",
@@ -83,6 +75,7 @@
 
         },
         {
+            "id": "100006",
             "title": "日向坂46 『Cage』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/Cage.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/Cage.jpg",
@@ -96,6 +89,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100007",
             "title": "日向坂46 『ホントの時間』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ホントの時間.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ホントの時間.jpg",
@@ -110,6 +104,7 @@
 
         },
         {
+            "id": "100008",
             "title": "日向坂46 『こんなに好きになっちゃっていいの？』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/こんなに好きになっちゃっていいの？.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/こんなに好きになっちゃっていいの？.jpg",
@@ -123,6 +118,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100009",
             "title": "日向坂46 『キュン』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/キュン.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/キュン.jpg",
@@ -136,6 +132,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100010",
             "title": "日向坂46 『窓を開けなくても』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/窓を開けなくても.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/窓を開けなくても.jpg",
@@ -149,6 +146,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100011",
             "title": "日向坂46 『キツネ』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/キツネ.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/キツネ.jpg",
@@ -162,6 +160,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100012",
             "title": "日向坂46 『JOYFUL LOVE』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/JOYFUL LOVE.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/JOYFUL LOVE.jpg",
@@ -175,6 +174,7 @@
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         },
         {
+            "id": "100013",
             "title": "日向坂46 『Footsteps』",
             "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/Footsteps.m4v",
             "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/Footsteps.jpg",
@@ -185,6 +185,20 @@
             "category": "日向坂46",
             "uploader": "日向坂46 OFFICIAL CHANNEL",
             "duration": "5:17",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "1000014",
+            "title": "日向坂46 『ドレミソラシド』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ドレミソラシド.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ドレミソラシド.jpg",
+            "like": 3500,
+            "dislike": 62,
+            "upload_date": "2019/09/09",
+            "views": 387613,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "5:14",
             "avatar": "/sakamichitv/assets/hinatazaka.png"
         }
     ]
