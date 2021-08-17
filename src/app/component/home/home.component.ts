@@ -35,10 +35,10 @@ export class HomeComponent implements OnInit{
         )
     }
     checkScreenWidth() {
-        if (window.innerWidth >= 2304) {
+        if (window.innerWidth >= 2030) {
             this.nzflex = '16.66%';
         }
-        else if (window.innerWidth >= 1624 && window.innerWidth < 2300) {
+        else if (window.innerWidth >= 1624 && window.innerWidth < 2030) {
             this.nzflex = '20%';
         }
         else if (window.innerWidth >= 1144 && window.innerWidth < 1624) {
