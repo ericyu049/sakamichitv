@@ -1,7 +1,7 @@
 <topnav-comp class="topnav"></topnav-comp>
 
 <div class="container">
-    <sidenav-comp class="sidenav"></sidenav-comp>
+    <sidenav-comp class="sidenav" [enableMiniMode]="true"></sidenav-comp>
     <div class="subcontainer">
         <div class="content" [ngClass]="{'miniMode': miniMode, 'wideMode' : !miniMode}" nz-row >
             <div *ngFor="let v of videos" nz-col class="video-card" [nzFlex]="nzflex">

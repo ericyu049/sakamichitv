@@ -25,6 +25,10 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { ViewerComponent } from './component/viewer/viewer.component';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { environment } from 'src/environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppReducer } from './store/app.reducer';
 registerLocaleData(en);
 const icons: IconDefinition[] = [
   MenuFoldOutline,
@@ -59,7 +63,13 @@ const icons: IconDefinition[] = [
     NzTypographyModule,
     NzListModule,
     NzCommentModule,
-    NzIconModule.forRoot(icons)
+    NzIconModule.forRoot(icons),
+    StoreModule.forRoot({ 'sakamichi': AppReducer }),
+    StoreDevtoolsModule.instrument({
+      name: 'Doc-View DevTools',
+      maxAge: 25,
+      logOnly: environment.production,
+    })
   ],
   providers: [
     { provide: AppService, useClass: AppService },

@@ -1,6 +1,8 @@
 <topnav-comp class="topnav"></topnav-comp>
 
 <div class="container" *ngIf="doneLoading">
+    <sidenav-comp class="sidenav" [showSideNav]="false" [enableMiniMode]="false"></sidenav-comp>
+
     <div class="subcontainer">
         <div class="player-container">
             <video class="player" controls [poster]="video.thumbnail">
@@ -21,7 +23,8 @@
                 </div>
             </div>
             <div class="channel">
-                <nz-avatar nzIcon="user" nzSrc="/sakamichitv/assets/hinatazaka.png" [nzShape]="'square'" [nzSize]="50"></nz-avatar>
+                <nz-avatar nzIcon="user" nzSrc="/sakamichitv/assets/hinatazaka.png" [nzShape]="'square'" [nzSize]="50">
+                </nz-avatar>
                 <span class="channel-name">{{video.uploader}}</span>
             </div>
             <div style="font-size: 12pt; padding: 15px 0">
@@ -35,7 +38,7 @@
                     </nz-form-item>
                     <nz-form-item>
                         <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue"
-                            (click)="handleSubmit()" style="margin-top: 15px;" >
+                            (click)="handleSubmit()" style="margin-top: 15px;">
                             Add Comment
                         </button>
                     </nz-form-item>

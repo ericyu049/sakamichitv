@@ -1,4 +1,7 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, HostListener, Input, OnInit } from "@angular/core";
+import { select, Store } from "@ngrx/store";
+import { selectSideNavState } from "src/app/store/app.selector";
+import { AppState } from "src/app/store/app.state";
 
 @Component({
     selector: 'sidenav-comp',
@@ -6,16 +9,21 @@ import { Component, HostListener, OnInit } from "@angular/core";
     styleUrls: ['./sidenav.component.scss']
 })
 export class SideNavComponent implements OnInit {
+    @Input() enableMiniMode: boolean;
     showSideNav: boolean = true;
-    constructor() {
-
+    constructor(private store: Store<AppState> ) {
     }
     @HostListener('window:resize', ['$event'])
     onResize(event?) {
         this.checkScreenWidth()
     }
     ngOnInit(): void {
-        this.checkScreenWidth()
+        this.checkScreenWidth();
+        this.store.pipe(select(selectSideNavState)).subscribe(
+            (data) => {
+                this.showSideNav = data;
+            }
+        )
     }
     checkScreenWidth() {
         if (window.innerWidth <= 1300) {

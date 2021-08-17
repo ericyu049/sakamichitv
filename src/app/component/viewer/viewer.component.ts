@@ -29,6 +29,12 @@ export class ViewerComponent implements OnInit {
                     this.doneLoading = true;
                 }
             );
+            this.service.getHintazakaVideos().subscribe(
+                (data: any) => {
+                    this.videos = data.videos;
+                    this.doneLoading = true;
+                }
+            )
         }
         else {
             const queryString = window.location.search;

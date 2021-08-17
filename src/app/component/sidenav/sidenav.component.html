@@ -31,7 +31,7 @@
         </li>
     </ll>
 </div>
-<div class="mini-nav" [hidden]="showSideNav">
+<div class="mini-nav" [hidden]="showSideNav || !enableMiniMode">
     <div>
         <div class="icon-container">
             <i nz-icon nzType="home" nzTheme="fill" style="font-size: 15pt;"></i>

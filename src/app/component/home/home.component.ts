@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from "@angular/core";
+import { select, Store } from "@ngrx/store";
 import { AppService } from "src/app/service/app.service";
+import { selectSideNavState } from "src/app/store/app.selector";
+import { AppState } from "src/app/store/app.state";
 
 @Component({
     selector: 'home-comp',
@@ -10,7 +13,7 @@ export class HomeComponent implements OnInit{
     videos;
     nzflex;
     miniMode;
-    constructor(private service: AppService) {
+    constructor(private store: Store<AppState>, private service: AppService) {
 
     }
     
@@ -21,7 +24,11 @@ export class HomeComponent implements OnInit{
     ngOnInit(): void {
         this.getVideos();
         this.checkScreenWidth()
-
+        this.store.pipe(select(selectSideNavState)).subscribe(
+            (data) => {
+                this.miniMode = !data;
+            }
+        )
     }
     
     getVideos() {
