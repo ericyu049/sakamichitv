@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from "@angular/core";
 import { select, Store } from "@ngrx/store";
 import { AppService } from "src/app/service/app.service";
+import { ActionTypes } from "src/app/store/app.action";
 import { selectSideNavState } from "src/app/store/app.selector";
 import { AppState } from "src/app/store/app.state";
 
@@ -9,14 +10,14 @@ import { AppState } from "src/app/store/app.state";
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
     videos;
     nzflex;
     miniMode;
     constructor(private store: Store<AppState>, private service: AppService) {
 
     }
-    
+
     @HostListener('window:resize', ['$event'])
     onResize(event?) {
         this.checkScreenWidth();
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit{
             }
         )
     }
-    
+
     getVideos() {
         this.service.getHintazakaVideos().subscribe(
             (data: any) => {
@@ -60,6 +61,8 @@ export class HomeComponent implements OnInit{
         this.miniMode = window.innerWidth <= 1300;
     }
     goToVideo(event) {
+        this.store.dispatch(ActionTypes.switchSideNav({ state: false }));
         window.location.href = 'https://ericyu049.github.io/sakamichitv/viewer.html?id=' + event.id;
+
     }
 }
