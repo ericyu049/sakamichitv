@@ -26,7 +26,7 @@ export class SideNavComponent implements OnInit {
         )
     }
     checkScreenWidth() {
-        if (window.innerWidth <= 1300) {
+        if (window.innerWidth <= 1300 && !window.location.pathname.includes("viewer.html")) {
             this.showSideNav = false;
         }
         else {
