@@ -1,0 +1,33 @@
+.side-nav {
+    max-width: 240px;
+    width: 240px;
+    height: calc(100vh - 56px);
+    padding: 15px 15px 15px 0px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hide {
+    display: none;
+}
+
+.mini-nav {
+    min-width: 75px;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 56px);
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        span {
+            font-size: 7pt;
+        }
+    }
+}

@@ -1,38 +1,67 @@
-.content {
-    margin-top: 64px;
-    color: white;
-    padding: 15px;
-    margin-left: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sider {
-    top: 64px;
+.topnav {
+    width: 100%;
     position: fixed;
-    height: calc(100vh - 64px);
+    z-index: 1;
+    background-color: white;
 }
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .sidenav {
+        position: fixed;
+        z-index: 1;
+        background-color: white;
+        margin-top: 56px;
+    }
+    .miniMode {
+        margin-left: 75px;
+        width: calc(100% - 75px);
+    }
+    .wideMode {
+        margin-left: 240px;
+        width: calc(100% - 240px);
 
-.card {
-    border: none;
-    background: none;
-    .card-title {
-        font-size: 11pt;
-        padding: 0;
     }
-    .avatar {
-        height: 45px;
-        width: 45px;
-        background: red;
-        border-radius: 100%;
+    .subcontainer {
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 56px;
+        width: 100%;
+        .content {
+            max-width: 2256px;
+            padding-left: 15px;
+            padding-right: 25px;
+            .video-card {
+                max-height: 300px;
+                padding: 8px;
+                img {
+                    width: 100%;
+                    cursor: pointer;
+                }
+                .info {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    max-width: 280px;
+                    .subinfo {
+                        padding-left: 15px;
+
+                        .title {
+                            font-size: 0.9rem;
+                            max-width: 280px;
+                            cursor: pointer;
+                        }
+                        .stats {
+                            font-size: 0.8rem;
+                            color: #606060;
+                        }
+                    }
+                }
+            }
+        }
     }
-    .channel-title {
-        text-overflow: ellipsis;
-        overflow-x: hidden;
-        white-space: nowrap;
-        font-size: 10pt;
-    }
-}
-::ng-deep .ant-card-body {
-    padding: 10px 0 0 0;
 }

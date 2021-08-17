@@ -1,52 +1,22 @@
-<nz-layout>
-    <nz-header style="color: white; padding: 0 25px; font-size: large; position: fixed; z-index: 1; width: 100%;">
-        <top-nav></top-nav>
-    </nz-header>
-    <nz-layout>
-        <nz-sider class="sider" nzCollapsible [nzCollapsedWidth]="0" [(nzCollapsed)]="!isOpen" [nzTrigger]="null"
-            nzWidth="250px">
-            <side-nav></side-nav>
-        </nz-sider>
-        <nz-content class="content">
-            <div style="max-width: 1800px;">
-                <ng-container [ngTemplateOutlet]="gridlist" [ngTemplateOutletContext]="{videos: videos}">
-                </ng-container>
+<topnav-comp class="topnav"></topnav-comp>
+
+<div class="container">
+    <sidenav-comp class="sidenav"></sidenav-comp>
+    <div class="subcontainer">
+        <div class="content" [ngClass]="{'miniMode': miniMode, 'wideMode' : !miniMode}" nz-row >
+            <div *ngFor="let v of videos" nz-col class="video-card" [nzFlex]="nzflex">
+                <img [src]="v.thumbnail" (click)="goToVideo(v)">
+                <div class="info">
+                    <nz-avatar nzIcon="user" nzSrc="/assets/hinatazaka.png"></nz-avatar>
+                    <div class="subinfo">
+                        <span class="title" nz-typography nzEllipsis nzEllipsisRows="2">{{v.title}}</span>
+                        <br>
+                        <span class="stats" nz-typography nzEllipsis>日向坂46 OFFICIAL CHANNEL</span>
+                        <br>
+                        <span class="stats">{{v.views}} views ・{{v.upload_date}}</span>
+                    </div>
+                </div>
             </div>
-        </nz-content>
-    </nz-layout>
-</nz-layout>
-<ng-template #gridlist let-videos="videos">
-    <div class="gutter-example">
-        <div nz-row [nzGutter]="[16,16]">
-            <nz-card nzHoverable nz-col class="card" nzSpan="6" *ngFor="let video of videos;"
-                [nzCover]="coverTemplate" (click)="goToVideo(video)">
-                <nz-card-meta [nzTitle]="title" [nzDescription]="description"></nz-card-meta>
-
-                <ng-template #title>
-                    <span class="card-title">{{video.snippet.title}}</span>
-                </ng-template>
-                <ng-template #description>
-                    <div class="description">
-                        <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <div>
-                                <i nz-icon nzType="play-square" nzTheme="fill"></i>
-                                {{video.stats.viewCount}}
-                            </div>
-                            <div>
-                                <i nz-icon nzType="clock-circle" nzTheme="fill"></i>
-                                {{video.snippet.publishTime}}
-                            </div>
-                        </div>
-                        <div class="channel-title"> <i nz-icon nzType="user"></i> {{video.snippet.channelTitle}}</div>
-                    </div>
-
-                </ng-template>
-                <ng-template #coverTemplate>
-                    <div class="image">
-                        <img [src]="video.snippet.thumbnails.high.url" style="width: 100%" />
-                    </div>
-                </ng-template>
-            </nz-card>
         </div>
     </div>
-</ng-template>
+</div>

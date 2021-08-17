@@ -1,0 +1,58 @@
+<div class="side-nav" [hidden]="!showSideNav">
+    <ll nz-menu nzMode="inline">
+        <li nz-menu-item>
+            <i nz-icon nzType="home" nzTheme="fill" style="font-size: 15pt; padding-right: 5px;"></i>
+            <a href="" style="font-size: 11pt;">Home</a>
+        </li>
+        <li nz-menu-item>
+            <i nz-icon nzType="history" style="font-size: 15pt; padding-right: 5px;"></i>
+
+            <a href="/mycollection" style="font-size: 11pt;">Watched History</a>
+        </li>
+        <nz-divider></nz-divider>
+        <li nz-menu-item>
+            <img src="/assets/nogizaka.png" style="height: 25px; padding-right: 15px;" />
+            <a>乃木坂46</a>
+        </li>
+        <li nz-menu-item>
+            <img src="/assets/sakurazaka.png" style="height: 25px; padding-right: 15px;" />
+            <a>櫻坂46（欅坂46）</a>
+        </li>
+        <li nz-menu-item>
+            <img src="/assets/hinatazaka.png" style="height: 25px; padding-right: 15px;" />
+            <a>日向坂46 (けやき坂46)</a>
+        </li>
+
+    </ll>
+    <ll nz-menu nzMode="inline">
+        <li nz-menu-item>
+            <i nz-icon nzType="setting" nzTheme="fill" style="font-size: 15pt; padding-right: 5px;"></i>
+            <a href="" style="font-size: 11pt;">Settings</a>
+        </li>
+    </ll>
+</div>
+<div class="mini-nav" [hidden]="showSideNav">
+    <div>
+        <div class="icon-container">
+            <i nz-icon nzType="home" nzTheme="fill" style="font-size: 15pt;"></i>
+            <span>Home</span>
+        </div>
+        <div class="icon-container">
+            <img src="/assets/nogizaka.png" style="width: 25px;" />
+            <span>乃木坂46</span>
+        </div>
+        <div class="icon-container">
+            <img src="/assets/sakurazaka.png" style="width: 25px; " />
+            <span>櫻坂46</span>
+        </div>
+        <div class="icon-container">
+            <img src="/assets/hinatazaka.png" style="width: 25px; " />
+            <span>日向坂46</span>
+        </div>
+    </div>
+
+    <div class="icon-container">
+        <i nz-icon nzType="setting" nzTheme="fill" style="font-size: 15pt;"></i>
+        <span>settings</span>
+    </div>
+</div>

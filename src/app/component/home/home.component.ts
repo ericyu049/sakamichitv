@@ -1,45 +1,60 @@
-import { HttpClient } from "@angular/common/http";
-import { OnInit } from "@angular/core";
-import { Component } from "@angular/core";
-import { select, Store } from "@ngrx/store";
-import { ActionTypes } from "src/app/store/app.action";
-import { selectVideoResults } from "src/app/store/app.selector";
-import { AppState } from "src/app/store/app.state";
+import { Component, HostListener, OnInit } from "@angular/core";
+import { AppService } from "src/app/service/app.service";
 
 @Component({
     selector: 'home-comp',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-    isOpen = true;
-    videos = [];
-    text = '123';
-    doneLoading = false;
-    constructor(private http: HttpClient, private store: Store<AppState>) { }
+export class HomeComponent implements OnInit{
+    videos;
+    nzflex;
+    miniMode;
+    constructor(private service: AppService) {
+
+    }
+    
+    @HostListener('window:resize', ['$event'])
+    onResize(event?) {
+        this.checkScreenWidth();
+    }
     ngOnInit(): void {
-        if (sessionStorage.getItem('videos') === null) {
-            this.store.dispatch(ActionTypes.searchVideos({searchRequest: {
-                part: 'snippet',
-                maxResults: 32,
-                q: '乃木坂46',
-                type: 'video',
-                key: ''
-            }}));
+        this.getVideos();
+        this.checkScreenWidth()
+
+    }
+    
+    getVideos() {
+        this.service.getHintazakaVideos().subscribe(
+            (data: any) => {
+                console.log('Get hinatazaka videos: ', data);
+                if (data.rspCde === 0) {
+                    this.videos = data.videos;
+                }
+            }
+        )
+    }
+    checkScreenWidth() {
+        if (window.innerWidth >= 2304) {
+            this.nzflex = '16.66%';
+        }
+        else if (window.innerWidth >= 1968 && window.innerWidth < 2300) {
+            this.nzflex = '20%';
+        }
+        else if (window.innerWidth >= 1144 && window.innerWidth < 1968) {
+            this.nzflex = '25%';
+        }
+        else if (window.innerWidth >= 888 && window.innerWidth < 1144) {
+            this.nzflex = '33.33%';
         }
         else {
-            this.videos = JSON.parse(sessionStorage.getItem('videos'));
+            this.nzflex = '50%';
         }
-        this.store.pipe(select(selectVideoResults)).subscribe(data => {
-            if (data) {
-                this.videos = Array.from(data)
-                
-                this.doneLoading = true;
-            }
-        });
+        this.miniMode = window.innerWidth <= 1300;
     }
-    goToVideo(video) {
-        sessionStorage.setItem('video', JSON.stringify(video));
-        window.location.href="/sakamichitv/viewer.html";
+    goToVideo(event) {
+        const encoded = btoa(event);
+        const decoded:any = atob(encoded);
+        console.log(decoded.title);
     }
 }

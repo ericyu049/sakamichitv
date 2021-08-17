@@ -1,0 +1,43 @@
+.topnav {
+    max-height: 56px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 35px;
+    i,
+    img {
+        cursor: pointer;
+    }
+    .left {
+        display: inherit;
+        align-items: inherit;
+        i {
+            font-size: 14pt;
+            padding: 0px 20px 0px 20px;
+        }
+    }
+    .middle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .search-box {
+            max-width: 640px;
+            width: 70%;
+        }
+        button {
+            border-radius: 0 5px 5px 0;
+        }
+    }
+    .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            font-size: 14pt;
+            padding: 0px 15px 0px 15px;
+        }
+    }
+}

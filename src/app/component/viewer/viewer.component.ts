@@ -1,11 +1,6 @@
-import { HttpClient } from "@angular/common/http";
-import { Component, Input, OnInit } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
-import { select, Store } from "@ngrx/store";
-import { ActionTypes } from "src/app/store/app.action";
-import { selectChannelDetail } from "src/app/store/app.selector";
-import { AppState } from "src/app/store/app.state";
-
+import { Component, OnInit } from "@angular/core";
+import { AppService } from "src/app/service/app.service";
+import { formatDistance } from 'date-fns';
 @Component({
     selector: 'viewer-comp',
     templateUrl: './viewer.component.html',
@@ -13,26 +8,50 @@ import { AppState } from "src/app/store/app.state";
 })
 export class ViewerComponent implements OnInit {
     video;
-    url;
-    channelAvatar;
-    subscriberCount;
-    doneLoading = false;
-    constructor(private domSanitizer: DomSanitizer, private http: HttpClient, private store: Store<AppState>) {
+    videos;
+    doneLoading: boolean = false;
+    data: any[] = [];
+    submitting = false;
+    inputValue = '';
+    user = {
+        author: 'こさかなしか勝たん',
+        avatar: '/assets/kosakana.jpg'
+      };
+    constructor(private service: AppService) {
 
     }
-    ngOnInit(): void {
-        this.video = JSON.parse(sessionStorage.getItem('video'));
-        this.url = this.domSanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.video.id.videoId);
-        this.store.dispatch(ActionTypes.fetchChannelDetail({ request: this.video.snippet.channelId }));
-        this.store.pipe(select(selectChannelDetail)).subscribe(
-            data => {
-                if (data) {
-                    console.log(data);
-                    this.channelAvatar = data.items[0].snippet.thumbnails.high.url;
-                    this.subscriberCount = data.items[0].statistics.subscriberCount;
-                    this.doneLoading = true;
-                }
+    ngOnInit() {
+        this.service.getTestVideo().subscribe(
+            (data: any) => {
+                console.log(data);
+                this.video = data.video;
+                this.doneLoading = true;
+            }
+        );
+        this.service.getHintazakaVideos().subscribe(
+            (data: any) => {
+                this.videos = data.videos;
             }
         )
+    }
+    handleSubmit(): void {
+        this.submitting = true;
+        const content = this.inputValue;
+        this.inputValue = '';
+        setTimeout(() => {
+            this.submitting = false;
+            this.data = [
+                ...this.data,
+                {
+                    ...this.user,
+                    content,
+                    datetime: new Date(),
+                    displayTime: formatDistance(new Date(), new Date())
+                }
+            ].map(e => ({
+                ...e,
+                displayTime: formatDistance(new Date(), e.datetime)
+            }));
+        }, 800);
     }
 }
