@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { AppService } from "src/app/service/app.service";
 import { formatDistance } from 'date-fns';
+import { Store } from "@ngrx/store";
+import { ActionTypes } from "src/app/store/app.action";
+import { AppState } from "src/app/store/app.state";
 @Component({
     selector: 'viewer-comp',
     templateUrl: './viewer.component.html',
@@ -17,10 +20,11 @@ export class ViewerComponent implements OnInit {
         author: 'こさかなしか勝たん',
         avatar: '/sakamichitv/assets/kosakana.jpg'
     };
-    constructor(private service: AppService) {
-
+    constructor(private store: Store<AppState>, private service: AppService) {
+        this.store.dispatch(ActionTypes.switchSideNav({ state: false }));
     }
     ngOnInit() {
+        
         if (window.location.hostname === 'localhost') {
             this.service.getTestVideo().subscribe(
                 (data: any) => {

@@ -61,8 +61,6 @@ export class HomeComponent implements OnInit {
         this.miniMode = window.innerWidth <= 1300;
     }
     goToVideo(event) {
-        this.store.dispatch(ActionTypes.switchSideNav({ state: false }));
         window.location.href = 'https://ericyu049.github.io/sakamichitv/viewer.html?id=' + event.id;
-
     }
 }
