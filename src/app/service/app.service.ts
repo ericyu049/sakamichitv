@@ -6,11 +6,11 @@ export class AppService {
 
     }
     getHintazakaVideos() {
-        const url = '/assets/hinatazaka.json';
+        const url = '/sakamichitv/assets/hinatazaka.json';
         return this.http.get(url, { responseType: 'json', reportProgress: true });
     }
     getTestVideo() {
-        const url = '/assets/video.json';
+        const url = '/sakamichitv/assets/video.json';
         return this.http.get(url, { responseType: 'json', reportProgress: true });
     }
 }

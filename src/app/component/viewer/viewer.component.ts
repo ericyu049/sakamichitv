@@ -15,7 +15,7 @@ export class ViewerComponent implements OnInit {
     inputValue = '';
     user = {
         author: 'こさかなしか勝たん',
-        avatar: '/assets/kosakana.jpg'
+        avatar: '/sakamichitv/assets/kosakana.jpg'
       };
     constructor(private service: AppService) {
 

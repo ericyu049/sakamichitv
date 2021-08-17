@@ -7,7 +7,7 @@
             <div *ngFor="let v of videos" nz-col class="video-card" [nzFlex]="nzflex">
                 <img [src]="v.thumbnail" (click)="goToVideo(v)">
                 <div class="info">
-                    <nz-avatar nzIcon="user" nzSrc="/assets/hinatazaka.png"></nz-avatar>
+                    <nz-avatar nzIcon="user" nzSrc="/sakamichitv/assets/hinatazaka.png"></nz-avatar>
                     <div class="subinfo">
                         <span class="title" nz-typography nzEllipsis nzEllipsisRows="2">{{v.title}}</span>
                         <br>
