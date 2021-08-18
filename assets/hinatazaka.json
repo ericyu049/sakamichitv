@@ -206,6 +206,48 @@
             "uploader": "日向坂46 OFFICIAL CHANNEL",
             "duration": "5:14",
             "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "100015",
+            "title": "日向坂46 『君に話しておきたいこと』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/君に話しておきたいこと.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/君に話しておきたいこと.jpg",
+            "like": 16000,
+            "dislike": 95,
+            "upload_date": "2021/03/18",
+            "views": 669051,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "5:06",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "100016",
+            "title": "けやき坂46 『期待していない自分』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/期待していない自分.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/期待していない自分.jpg",
+            "like": 12000,
+            "dislike": 214,
+            "upload_date": "2018/06/22",
+            "views": 591807,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "3:28",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "100017",
+            "title": "日向坂46 『誰よりも高く跳べ！』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/誰よりも高く跳べ！.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/誰よりも高く跳べ！.jpg",
+            "like": 14000,
+            "dislike": 91,
+            "upload_date": "2021/03/18",
+            "views": 743523,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "4:48",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
         }
     ]
 }
