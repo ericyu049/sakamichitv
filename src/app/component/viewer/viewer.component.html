@@ -58,7 +58,7 @@
         </div>
 
         <div class="suggestion">
-            <div *ngFor="let v of videos" class="video-card">
+            <div *ngFor="let v of videos" class="video-card" (click)="goToVideo(v)">
                 <img class="image" [src]="v.thumbnail">
                 <div class="info">
                     <span class="title" nz-typography nzEllipsis nzEllipsisRows="2">{{v.title}}</span>

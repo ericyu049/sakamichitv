@@ -87,4 +87,7 @@ export class ViewerComponent implements OnInit {
             }));
         }, 800);
     }
+    goToVideo(event) {
+        window.location.href = 'https://ericyu049.github.io/sakamichitv/viewer.html?id=' + event.id;
+    }
 }

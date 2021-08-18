@@ -9,7 +9,7 @@
                 <div class="info">
                     <nz-avatar nzIcon="user" [nzSrc]="v.avatar"></nz-avatar>
                     <div class="subinfo">
-                        <span class="title" nz-typography nzEllipsis nzEllipsisRows="2">{{v.title}}</span>
+                        <span class="title" nz-typography nzEllipsis nzEllipsisRows="2" (click)="goToVideo(v)">{{v.title}}</span>
                         <br>
                         <span class="stats" nz-typography nzEllipsis>{{v.uploader}}</span>
                         <br>

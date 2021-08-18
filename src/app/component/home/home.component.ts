@@ -36,24 +36,7 @@ export class HomeComponent implements OnInit {
         forkJoin([this.service.getHintazakaVideos(), this.service.getKeyakizakaVideos()]).subscribe(results => {
             this.videos.push(results[0].videos, results[1].videos);
             this.videos = this.shuffleArray(this.videos.flat());
-        })
-
-        // this.service.getHintazakaVideos().subscribe(
-        //     (data: any) => {
-        //         console.log('Get hinatazaka videos: ', data);
-        //         if (data.rspCde === 0) {
-        //             this.videos.push(data.videos);
-        //         }
-        //     }
-        // );
-        // this.service.getKeyakizakaVideos().subscribe(
-        //     (data: any) => {
-        //         console.log('Get keyakizaka videos: ', data);
-        //         if (data.rspCde === 0) {
-        //             this.videos.push(data.videos);
-        //         }
-        //     }
-        // )
+        });
     }
     checkScreenWidth() {
         if (window.innerWidth >= 2030) {
