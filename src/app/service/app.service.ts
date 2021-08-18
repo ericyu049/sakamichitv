@@ -1,12 +1,17 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 @Injectable()
 export class AppService {
     constructor(private http: HttpClient) {
 
     }
-    getHintazakaVideos() {
+    getHintazakaVideos(): Observable<any> {
         const url = '/sakamichitv/assets/hinatazaka.json';
+        return this.http.get(url, { responseType: 'json', reportProgress: true });
+    }
+    getKeyakizakaVideos(): Observable<any> {
+        const url = '/sakamichitv/assets/keyakizaka.json';
         return this.http.get(url, { responseType: 'json', reportProgress: true });
     }
     getTestVideo() {

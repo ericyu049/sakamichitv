@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from "@angular/core";
 import { select, Store } from "@ngrx/store";
+import { forkJoin } from "rxjs";
 import { AppService } from "src/app/service/app.service";
-import { ActionTypes } from "src/app/store/app.action";
 import { selectSideNavState } from "src/app/store/app.selector";
 import { AppState } from "src/app/store/app.state";
 
@@ -11,7 +11,7 @@ import { AppState } from "src/app/store/app.state";
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    videos;
+    videos = [];
     nzflex;
     miniMode;
     constructor(private store: Store<AppState>, private service: AppService) {
@@ -32,15 +32,28 @@ export class HomeComponent implements OnInit {
         )
     }
 
-    getVideos() {
-        this.service.getHintazakaVideos().subscribe(
-            (data: any) => {
-                console.log('Get hinatazaka videos: ', data);
-                if (data.rspCde === 0) {
-                    this.videos = data.videos;
-                }
-            }
-        )
+    async getVideos() {
+        forkJoin([this.service.getHintazakaVideos(), this.service.getKeyakizakaVideos()]).subscribe(results => {
+            this.videos.push(results[0].videos, results[1].videos);
+            this.videos = this.shuffleArray(this.videos.flat());
+        })
+
+        // this.service.getHintazakaVideos().subscribe(
+        //     (data: any) => {
+        //         console.log('Get hinatazaka videos: ', data);
+        //         if (data.rspCde === 0) {
+        //             this.videos.push(data.videos);
+        //         }
+        //     }
+        // );
+        // this.service.getKeyakizakaVideos().subscribe(
+        //     (data: any) => {
+        //         console.log('Get keyakizaka videos: ', data);
+        //         if (data.rspCde === 0) {
+        //             this.videos.push(data.videos);
+        //         }
+        //     }
+        // )
     }
     checkScreenWidth() {
         if (window.innerWidth >= 2030) {
@@ -62,5 +75,15 @@ export class HomeComponent implements OnInit {
     }
     goToVideo(event) {
         window.location.href = 'https://ericyu049.github.io/sakamichitv/viewer.html?id=' + event.id;
+    }
+    shuffleArray(array) {
+        var currentIndex = array.length, randomIndex;
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+        }
+        return array;
     }
 }
