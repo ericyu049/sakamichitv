@@ -10,15 +10,15 @@
             </video>
             <span class="title">{{video.title}}</span>
             <div class="statbox">
-                <span class="info">{{video.views}} views・{{video.upload_date}}</span>
+                <span class="info">{{video.views | number:'1.0':'en-US'}} views・{{video.upload_date | date: 'MMM d, y'}}</span>
                 <div class="likes">
                     <div class="icon-container">
                         <i nz-icon nzType="like" nzTheme="fill" style="font-size: 15pt; padding-right: 5px;"></i>
-                        <span style="font-size: 11pt;">{{video.like}}</span>
+                        <span style="font-size: 11pt;">{{video.like | number:'1.0':'en-US'}}</span>
                     </div>
                     <div class="icon-container">
                         <i nz-icon nzType="dislike" nzTheme="fill" style="font-size: 15pt; padding-right: 5px;"></i>
-                        <span style="font-size: 11pt;">{{video.dislike}}</span>
+                        <span style="font-size: 11pt;">{{video.dislike | number:'1.0':'en-US'}}</span>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                     <br>
                     <span class="uploader">{{v.uploader}}</span>
                     <br>
-                    <span class="views">{{v.views}} views・{{v.upload_date}}</span>
+                    <span class="views">{{v.views | number:'1.0':'en-US'}} views・{{v.upload_date | date: 'MMM d, y' }}</span>
                 </div>
             </div>
         </div>

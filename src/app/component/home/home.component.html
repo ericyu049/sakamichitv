@@ -13,7 +13,7 @@
                         <br>
                         <span class="stats" nz-typography nzEllipsis>{{v.uploader}}</span>
                         <br>
-                        <span class="stats">{{v.views}} views ・{{v.upload_date}}</span>
+                        <span class="stats">{{v.views | number:'1.0':'en-US'}} views ・{{v.upload_date | date: 'MMM d, y'}}</span>
                     </div>
                 </div>
             </div>

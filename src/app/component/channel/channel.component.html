@@ -11,7 +11,7 @@
                 <nz-avatar nzIcon="user" [nzSrc]="channel.avatar" [nzSize]="80"></nz-avatar>
                 <div class="info">
                     <span class="channel_name">{{channel.name}}</span>
-                    <span class="subscribers">{{channel.subscribers}} subscribers</span>
+                    <span class="subscribers">{{channel.subscribers | number:'1.0':'en-US'}} subscribers</span>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                         <br>
                         <span class="stats" nz-typography nzEllipsis>{{v.uploader}}</span>
                         <br>
-                        <span class="stats">{{v.views}} views ・{{v.upload_date}}</span>
+                        <span class="stats">{{v.views | number:'1.0':'en-US'}} views ・{{v.upload_date | date: 'MMM d, y'}}</span>
                     </div>
                 </div>
             </div>
