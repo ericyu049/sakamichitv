@@ -11,6 +11,7 @@ import { AppState } from "src/app/store/app.state";
 export class SideNavComponent implements OnInit {
     @Input() enableMiniMode: boolean;
     showSideNav: boolean = true;
+    id;
     constructor(private store: Store<AppState>) {
     }
     @HostListener('window:resize', ['$event'])
@@ -23,7 +24,10 @@ export class SideNavComponent implements OnInit {
             (data) => {
                 this.showSideNav = data;
             }
-        )
+        );
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        this.id = urlParams.get('cid');
     }
     checkScreenWidth() {
         if (window.innerWidth <= 1300) {
