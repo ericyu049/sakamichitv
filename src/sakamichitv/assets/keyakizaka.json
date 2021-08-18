@@ -1,5 +1,11 @@
 {
     "rspCde": 0,
+    "channel": {
+        "banner": "/sakamichitv/assets/sakurazaka_banner.jpg",
+        "avatar": "/sakamichitv/assets/sakurazaka.png",
+        "name": "櫻坂46 OFFICIAL CHANNEL",
+        "subscribers": 1050000
+    },
     "videos": [
         {  
             "id": "200001",

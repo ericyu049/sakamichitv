@@ -1,0 +1,36 @@
+<topnav-comp class="topnav"></topnav-comp>
+
+<div class="container">
+    <sidenav-comp class="sidenav" [enableMiniMode]="true"></sidenav-comp>
+    <div class="subcontainer">
+        <div class="banner" [ngClass]="{'miniMode': miniMode, 'wideMode' : !miniMode}">
+            <img [src]="channel.banner">
+        </div>
+        <div class="channel_container" [ngClass]="{'miniMode': miniMode, 'wideMode' : !miniMode}">
+            <div class="channel_info">
+                <nz-avatar nzIcon="user" [nzSrc]="channel.avatar" [nzSize]="80"></nz-avatar>
+                <div class="info">
+                    <span class="channel_name">{{channel.name}}</span>
+                    <span class="subscribers">{{channel.subscribers}} subscribers</span>
+                </div>
+            </div>
+        </div>
+        <div class="content" [ngClass]="{'miniMode': miniMode, 'wideMode' : !miniMode}" nz-row>
+            <nz-divider nzText="Music videos" nzOrientation="left"></nz-divider>
+            <div *ngFor="let v of videos" nz-col class="video-card" [nzFlex]="nzflex">
+                <img [src]="v.thumbnail" (click)="goToVideo(v)">
+                <div class="info">
+                    <nz-avatar nzIcon="user" [nzSrc]="v.avatar"></nz-avatar>
+                    <div class="subinfo">
+                        <span class="title" nz-typography nzEllipsis nzEllipsisRows="2"
+                            (click)="goToVideo(v)">{{v.title}}</span>
+                        <br>
+                        <span class="stats" nz-typography nzEllipsis>{{v.uploader}}</span>
+                        <br>
+                        <span class="stats">{{v.views}} views ・{{v.upload_date}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

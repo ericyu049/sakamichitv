@@ -1,5 +1,11 @@
 {
     "rspCde": 0,
+    "channel": {
+        "banner": "/sakamichitv/assets/hinatazaka_banner.jpg",
+        "avatar": "/sakamichitv/assets/hinatazaka.png",
+        "name": "日向坂46 OFFICIAL CHANNEL",
+        "subscribers": 648000
+    },
     "videos": [
         {  
             "id": "100001",

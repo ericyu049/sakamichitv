@@ -29,6 +29,7 @@ import { environment } from 'src/environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppReducer } from './store/app.reducer';
+import { ChannelComponent } from './component/channel/channel.component';
 registerLocaleData(en);
 const icons: IconDefinition[] = [
   MenuFoldOutline,
@@ -44,6 +45,7 @@ const icons: IconDefinition[] = [
 @NgModule({
   declarations: [
     AppComponent,
+    ChannelComponent,
     HomeComponent,
     TopNavComponent,
     SideNavComponent,
