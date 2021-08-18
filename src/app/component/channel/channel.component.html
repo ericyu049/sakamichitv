@@ -2,7 +2,7 @@
 
 <div class="container">
     <sidenav-comp class="sidenav" [enableMiniMode]="true"></sidenav-comp>
-    <div class="subcontainer">
+    <div class="subcontainer" *ngIf="doneLoading">
         <div class="banner" [ngClass]="{'miniMode': miniMode, 'wideMode' : !miniMode}">
             <img [src]="channel.banner">
         </div>
