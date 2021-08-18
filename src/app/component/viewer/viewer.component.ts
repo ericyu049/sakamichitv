@@ -54,7 +54,13 @@ export class ViewerComponent implements OnInit {
                 )
             }
             else if (id.startsWith('2')) {
-
+                this.service.getKeyakizakaVideos().subscribe(
+                    (data: any) => {
+                        this.video = data.videos.find(x => x.id === id)
+                        this.videos = data.videos;
+                        this.doneLoading = true;
+                    }
+                )
             }
             else if (id.startsWith('3')) {
 
