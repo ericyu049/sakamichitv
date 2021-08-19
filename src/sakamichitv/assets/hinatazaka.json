@@ -248,6 +248,62 @@
             "uploader": "日向坂46 OFFICIAL CHANNEL",
             "duration": "4:48",
             "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "100018",
+            "title": "日向坂46 『アザトカワイイ』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/アザトカワイイ.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/アザトカワイイ.jpg",
+            "like": 150000,
+            "dislike": 3500,
+            "upload_date": "2020/08/19",
+            "views": 17758724,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "4:51",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "100019",
+            "title": "日向坂46 『君しか勝たん』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/君しか勝たん.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/君しか勝たん.jpg",
+            "like": 99000,
+            "dislike": 2500,
+            "upload_date": "2021/04/26",
+            "views": 8039248,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "5:12",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "100020",
+            "title": "日向坂46 『ハッピーオーラ』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/ハッピーオーラ.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/ハッピーオーラ.jpg",
+            "like": 22000,
+            "dislike": 139,
+            "upload_date": "2021/03/18",
+            "views": 897372,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "4:50",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
+        },
+        {
+            "id": "100021",
+            "title": "日向坂46 『声の足跡』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/声の足跡.m4v",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/声の足跡.jpg",
+            "like": 39000,
+            "dislike": 318,
+            "upload_date": "2021/05/05",
+            "views": 1891606,
+            "category": "日向坂46",
+            "uploader": "日向坂46 OFFICIAL CHANNEL",
+            "duration": "4:57",
+            "avatar": "/sakamichitv/assets/hinatazaka.png"
         }
     ]
 }
