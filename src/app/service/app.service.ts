@@ -10,8 +10,12 @@ export class AppService {
         const url = '/sakamichitv/assets/hinatazaka.json';
         return this.http.get(url, { responseType: 'json', reportProgress: true });
     }
-    getKeyakizakaVideos(): Observable<any> {
-        const url = '/sakamichitv/assets/keyakizaka.json';
+    getSakurazakaVideos(): Observable<any> {
+        const url = '/sakamichitv/assets/sakurazaka.json';
+        return this.http.get(url, { responseType: 'json', reportProgress: true });
+    }
+    getNogizakaVideos(): Observable<any> {
+        const url = '/sakamichitv/assets/nogizaka.json';
         return this.http.get(url, { responseType: 'json', reportProgress: true });
     }
     getTestVideo() {

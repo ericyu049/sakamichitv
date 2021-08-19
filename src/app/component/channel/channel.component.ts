@@ -34,7 +34,7 @@ export class ChannelComponent implements OnInit {
     }
     getVideos() {
         if (window.location.hostname === 'localhost') {
-            this.service.getKeyakizakaVideos().subscribe(
+            this.service.getSakurazakaVideos().subscribe(
                 (data: any) => {
                     this.channel = data.channel;
                     this.videos = data.videos;
@@ -56,7 +56,7 @@ export class ChannelComponent implements OnInit {
                 )
             }
             else if (id === '2') {
-                this.service.getKeyakizakaVideos().subscribe(
+                this.service.getSakurazakaVideos().subscribe(
                     (data: any) => {
                         this.channel = data.channel;
                         this.videos = data.videos;
@@ -65,7 +65,13 @@ export class ChannelComponent implements OnInit {
                 )
             }
             else if (id === '3') {
-
+                this.service.getNogizakaVideos().subscribe(
+                    (data: any) => {
+                        this.channel = data.channel;
+                        this.videos = data.videos;
+                        this.doneLoading = true;
+                    }
+                )
             }
         }
     }
