@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
 
     async getVideos() {
         forkJoin([this.service.getHintazakaVideos(), this.service.getSakurazakaVideos(), this.service.getNogizakaVideos()]).subscribe(results => {
-            this.videos.push(results[0].videos, results[1].videos);
+            this.videos.push(results[0].videos, results[1].videos, results[2].videos);
             this.videos = this.shuffleArray(this.videos.flat());
         });
     }
