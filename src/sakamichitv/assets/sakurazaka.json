@@ -332,6 +332,48 @@
             "uploader": "櫻坂46 OFFICIAL CHANNEL",
             "duration": "4:00",
             "avatar": "/sakamichitv/assets/sakurazaka.png"
+        },
+        {
+            "id": "200024",
+            "title": "櫻坂46 『BAN』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/BAN.mp4",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/BAN.jpg",
+            "like": 74000,
+            "dislike": 1500,
+            "upload_date": "2021/03/16",
+            "views": 6348248,
+            "category": "櫻坂46",
+            "uploader": "櫻坂46 OFFICIAL CHANNEL",
+            "duration": "4:11",
+            "avatar": "/sakamichitv/assets/sakurazaka.png"
+        },
+        {
+            "id": "200025",
+            "title": "櫻坂46 『Nobody's fault』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/Nobody's fault.mp4",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/Nobody's fault.jpg",
+            "like": 88000,
+            "dislike": 2800,
+            "upload_date": "2020/11/10",
+            "views": 5697467,
+            "category": "櫻坂46",
+            "uploader": "櫻坂46 OFFICIAL CHANNEL",
+            "duration": "5:23",
+            "avatar": "/sakamichitv/assets/sakurazaka.png"
+        },
+        {
+            "id": "200026",
+            "title": "櫻坂46 『なぜ　恋をして来なかったんだろう？』",
+            "video_url": "https://hackrice.nyc3.digitaloceanspaces.com/なぜ　恋をして来なかったんだろう？.mp4",
+            "thumbnail": "https://hackrice.nyc3.digitaloceanspaces.com/なぜ　恋をして来なかったんだろう？.jpg",
+            "like": 89000,
+            "dislike": 1700,
+            "upload_date": "2020/11/17",
+            "views": 8370061,
+            "category": "櫻坂46",
+            "uploader": "櫻坂46 OFFICIAL CHANNEL",
+            "duration": "3:57",
+            "avatar": "/sakamichitv/assets/sakurazaka.png"
         }
     ]
 }
